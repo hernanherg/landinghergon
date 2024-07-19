@@ -1,0 +1,229 @@
+/* normalización */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: #F6F7F1;
+}
+
+body {
+    background-color: #191919;
+}
+
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    justify-content: space-between; /* separa elementos*/
+    padding: 15px 3%;
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.logo{
+font-size: 30px;
+font-weight: 800;
+}
+
+.navlist{
+    display: flex;
+/* elementos de la lista ul en linea */
+}
+
+.navlist a{
+    margin-left: 60px; /* separamos palabras del navlist */
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /* subrayado transparente */
+    transition: all .5s ease; /* anima todas las caracteristicas del navlist */
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid #191919; /* subrayado negro */
+}
+
+#menuIcon{
+    display: none; 
+    color: #b6baab;
+    font-size: 40px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menuToggle{
+    display: none;
+}
+
+#menuIconAction{
+    display: none;
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+    min-height: 100vh;
+    background: linear-gradient(245deg, #637532 0%, #62704e 25%, #383a31 50%); /* fondo gradiente */
+    position: relative; /* relativo al contenedor */
+    display: grid; /* para dividir el hero en dos columnas*/
+    grid-template-columns: 1fr 1fr; /* dos columnas*/
+    align-items: center; /* alinear verticalmente el hero */
+    gap: 2rem; /* espacio entre columnas */
+}
+
+.hero h5{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.hero h4{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero h1{
+line-height: 1;
+margin: 0 0 30px;
+}
+
+.hero p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 2;
+}
+
+.hero img{
+width: 400px;
+margin: 10px 0 0 10px;
+height: auto;
+transition: all .5s linear;
+}
+
+.hero img:hover{
+    width: 420px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block;
+    background: #191919;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    margin: 5px;
+    transition: all .5s linear;
+
+}
+
+.hero-text i{
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.hero a:hover{
+    background-color: #62704e;
+    border: 1px solid;
+    transform: translateY(-8px)
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #191919;
+    opacity: 0.8;
+    transition: all .5s linear;
+}
+
+.scroll-down i:hover{
+    transform: translateY(8px);
+}
+
+/* media queries */
+@media (max-width: 992px){
+
+    section{
+        padding: 0 3%;
+        transition: .2s;
+}
+
+.hero-text{
+    padding-top: 0;
+}
+
+.hero-text p {
+font-size: 70%;
+}
+
+
+.hero-img{
+    text-align: center;
+}
+
+.hero-img img{
+    width: 80%;
+    margin: 10% 0 0 10%;
+}
+}
+
+@media (max-width: 768px){
+
+    
+
+#menuIcon{
+    display: block;
+}
+
+.hero-text{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero-img img{
+    margin:0;
+}
+
+.hero{
+    height: 100%;
+    gap: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color:#2b301dd2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all 0.2s;
+}
+
+.navlist a{
+    display: block;
+    margin: 7px 0;
+} 
+
+/* configuracion del navbar en mobile */
+#menuToggle:checked + label.menuIconAction + ul{
+right: 0;
+}
+}
